@@ -70,7 +70,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                               fit: BoxFit.fill,
                             ),
                        h3,
-                            Text(
+                      Text(
                               contents[i].title!,
                               style: txtStyleWB
                             ),

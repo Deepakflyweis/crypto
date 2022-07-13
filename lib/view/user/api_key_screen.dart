@@ -59,9 +59,9 @@ class ApiKeyScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     decoration: InputDecoration( 
                     contentPadding: EdgeInsets.all(10),
-                              border: InputBorder.none,
-                              hintText: 'Enter Secret Key',
-                              hintStyle: hintStyle, 
+                     border: InputBorder.none,
+                    hintText: 'Enter Secret Key',
+                     hintStyle: hintStyle, 
                     ),
                   ),
                  ),

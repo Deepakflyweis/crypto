@@ -1,5 +1,6 @@
 
 import 'package:crypto_app/utils/appColor/app_colors.dart';
+import 'package:crypto_app/widgets/arrow_back.dart';
 import 'package:crypto_app/widgets/myWidget.dart';
 import 'package:flutter/material.dart'; 
 import 'package:get/get.dart';
@@ -20,16 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
           child: SingleChildScrollView(
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                    onPressed: () => Get.back(),
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: whiteclr,
-                      size: 30,
-                    )),
-              ),
+               Arrowback(),
             
               ],
           ),
