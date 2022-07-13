@@ -2,8 +2,6 @@ import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/widgets/myWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
@@ -20,7 +18,7 @@ class _FAQScreenState extends State<FAQScreen> {
     return SafeArea(
       child: Scaffold(
         body: MyWidget(
-            child: SingleChildScrollView(
+          child: SingleChildScrollView(
           padding: EdgeInsets.only(left: 10, right: 10),
           child: Column(
             children: [
@@ -55,6 +53,7 @@ class _FAQScreenState extends State<FAQScreen> {
                           maxLines: 1,
                           overflow: TextOverflow.fade,
                            style: txtStyleN,),
+                      
                         trailing: IconButton(
                           onPressed:  () {
                             
