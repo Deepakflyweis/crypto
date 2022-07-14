@@ -75,7 +75,8 @@ class SearchScreen extends StatelessWidget {
                               backgroundColor: whiteclr,
                               child: CircleAvatar(
                                 radius: 27, 
-                                backgroundColor: greyclr,
+                                 backgroundImage:  AssetImage("assets/images/market.png"),
+                                 backgroundColor:  Colors.red,
                               ),
                             ),
                           w2,
@@ -93,7 +94,11 @@ class SearchScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("\$ " "0.985234",style: txtStyleWB,),
-                                Text("+9.35%",style: txtStyleWS,),
+                               const Text("+9.35%",style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),),
                               ],
                            ),
 

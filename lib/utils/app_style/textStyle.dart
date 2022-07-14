@@ -22,6 +22,12 @@ TextStyle hintStyle = const TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle hintStyleS = const TextStyle(
+  color: Color(0xff898282),
+  fontSize: 12,
+  fontWeight: FontWeight.bold,
+);
+
 TextStyle txtStyleN = const TextStyle(
   color: whiteclr,
   fontSize: 15,
@@ -47,3 +53,4 @@ SizedBox h5 = SizedBox(height: 5.h);
 
 SizedBox w1 = SizedBox(width: 1.w);
 SizedBox w2 = SizedBox(width: 2.w);
+SizedBox w3 = SizedBox(width: 3.w);

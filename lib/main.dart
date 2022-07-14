@@ -1,7 +1,6 @@
-
-import 'package:crypto_app/view/feed/feed_screen.dart';
-import 'package:crypto_app/view/search/search_screen.dart';
-import 'package:crypto_app/view/terms/terms_cond.dart';
+ 
+import 'package:crypto_app/view/terms/refer_details.dart';
+ 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
            primarySwatch: Colors.blue,
         ),
-        home: SearchScreen(),
+        home: ReferDetailsScreen(),
       ),
     );
   }
