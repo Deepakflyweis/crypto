@@ -1,6 +1,7 @@
 
  
 import 'package:crypto_app/view/home/home_screen.dart';
+import 'package:crypto_app/view/market/market_home.dart';
 import 'package:crypto_app/view/search/search_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class _NavBarIndexState extends State<NavBarIndex> {
 
   List<Widget> navigationPage = [
      HomeScreen(),
-     SearchScreen(),
+     MarketHomeScreen(),
      SearchScreen(),
      SearchScreen(),
      SearchScreen(),

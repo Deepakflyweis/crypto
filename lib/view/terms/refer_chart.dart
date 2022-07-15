@@ -9,7 +9,7 @@ import 'package:sizer/sizer.dart';
 class SubscriberChart extends StatelessWidget {
   final List<BarChartModel> data;
 
-  SubscriberChart({required this.data});
+  const SubscriberChart({super.key, required this.data});
   
   @override
   Widget build(BuildContext context) {

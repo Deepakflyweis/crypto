@@ -28,6 +28,8 @@ TextStyle hintStyleS = const TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+ 
+
 TextStyle txtStyleN = const TextStyle(
   color: whiteclr,
   fontSize: 15,
@@ -36,6 +38,11 @@ TextStyle txtStyleN = const TextStyle(
 
 TextStyle txtStyleWB = const TextStyle(
   color: whiteclr,
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
+);
+TextStyle txtStyleBtn = const TextStyle(
+  color: btnclr,
   fontSize: 20,
   fontWeight: FontWeight.w700,
 );

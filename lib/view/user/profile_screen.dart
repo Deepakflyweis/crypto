@@ -90,7 +90,8 @@ class ProfileScreen extends StatelessWidget {
                 backgroundImage: AssetImage(
                   "assets/images/proimg.png",
                 ),
-              ))
+              ),
+              )
         ]),
       ),
     );

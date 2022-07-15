@@ -75,7 +75,7 @@ class SearchScreen extends StatelessWidget {
                               backgroundColor: whiteclr,
                               child: CircleAvatar(
                                 radius: 27, 
-                                 backgroundImage:  AssetImage("assets/images/market.png"),
+                                 backgroundImage:  AssetImage("assets/images/coin.png"),
                                  backgroundColor:  Colors.red,
                               ),
                             ),

@@ -8,6 +8,7 @@ import 'package:crypto_app/widgets/myWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class ReferDetailsScreen extends StatefulWidget {
   const ReferDetailsScreen({super.key});
@@ -60,8 +61,8 @@ class _ReferDetailsScreenState extends State<ReferDetailsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: MyWidget(
-      child: SingleChildScrollView(
+        body: MyWidget(
+        child: SingleChildScrollView(
         child: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,10 +92,31 @@ class _ReferDetailsScreenState extends State<ReferDetailsScreen> {
                   ))
             ],
           ),
-          SubscriberChart(
-            
+          SubscriberChart( 
             data: data,
           ),
+          h2,
+          Row(
+            children: [
+              Text("    \$ 9.369", style: txtStyleWB,),
+              Spacer(),
+            
+               Image.asset(
+                  "assets/images/widraw.png",
+                    height: 5.h,
+                    width: 25.w,
+                    fit: BoxFit.fill,
+                 ),
+            Divider(color: Color(0xff898282),thickness: 1.5,),
+             
+            ],
+          ),
+               h2,
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Text("    Referrals", style: txtStyleWB),  
+            ),
+       
         ]),
       ),
     )));
