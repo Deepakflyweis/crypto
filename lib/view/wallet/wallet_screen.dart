@@ -1,5 +1,6 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
+import 'package:crypto_app/view/wallet/wallet_overview.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -31,10 +32,14 @@ class _WalletScreenState extends State<WalletScreen>
     return SafeArea(
         child: Scaffold(
           backgroundColor: divclr,
-      body: SingleChildScrollView(
-        child: Column(
+          body: SingleChildScrollView(
+          child: Column( 
           children: [
             tabMarket(),
+            h1, 
+            tabViewMarket(),           
+            
+
           ],
         ),
       ),
@@ -51,13 +56,13 @@ class _WalletScreenState extends State<WalletScreen>
         controller: _marketController,
         tabs: const [
           Tab(
-            child: Text("Orderbook"),
+            child: Text("Overview"),
           ),
           Tab(
-            child: Text("Recent Trades"),
+            child: Text("Trading"),
           ),
           Tab(
-            child: Text("Token Info"),
+            child: Text("Funding"),
           ),
         ]);
   }
@@ -73,13 +78,12 @@ class _WalletScreenState extends State<WalletScreen>
      ),
       height: 90.h,
       width: 98.w,
-      color: divclr,
       child: TabBarView(
         controller: _marketController,
-        children: const [
-          // OrderbookScreen(),
-          // OrderbookScreen(),
-          // OrderbookScreen(),
+        children:   [
+          WalletOverview(),
+          WalletOverview(),
+          WalletOverview(),
         ],
       ),
     );

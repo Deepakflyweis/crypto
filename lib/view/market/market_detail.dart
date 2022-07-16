@@ -2,6 +2,7 @@ import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/view/market/market_fav.dart';
 import 'package:crypto_app/view/market/orderbook_screen.dart';
+import 'package:crypto_app/view/market/token_info.dart';
 import 'package:crypto_app/view/traders/trader_overview.dart';
 import 'package:crypto_app/widgets/myWidget.dart';
 import 'package:flutter/material.dart';
@@ -193,7 +194,7 @@ late TabController _marketController;
   }
   tabViewMarket() {
     return Container( 
-      height: 30.h,
+      height: 31.h,
       width: 98.w,
         color: divclr,
                child: TabBarView(
@@ -201,7 +202,7 @@ late TabController _marketController;
                 children:  const [
                   OrderbookScreen(),
                   OrderbookScreen(),
-                  OrderbookScreen(),
+                  TokenInfoScrren(),
                ],
        ),
     );

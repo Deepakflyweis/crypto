@@ -1,6 +1,12 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
+import 'package:crypto_app/view/feed/feed_screen.dart';
 import 'package:crypto_app/view/home/trending_screen.dart';
+import 'package:crypto_app/view/notification/notification_screen.dart';
+import 'package:crypto_app/view/search/search_screen.dart';
+import 'package:crypto_app/view/support/support_screen.dart';
+import 'package:crypto_app/view/terms/refer_details.dart';
+import 'package:crypto_app/view/traders/trader_home.dart';
 import 'package:crypto_app/view/user/profile_screen.dart';
 import 'package:crypto_app/widgets/myWidget.dart';
 
@@ -16,14 +22,13 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
-
-late TabController _packController;
-
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _packController;
 
   @override
   void initState() {
-    _packController = TabController(length: 5,vsync: this);
+    _packController = TabController(length: 5, vsync: this);
     super.initState();
   }
 
@@ -31,15 +36,14 @@ late TabController _packController;
   void dispose() {
     _packController.dispose();
     super.dispose();
-
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: MyWidget(
-          child: SingleChildScrollView( 
+            child: SingleChildScrollView(
           child: Column(
             children: [
               h3,
@@ -55,41 +59,48 @@ late TabController _packController;
                     ),
                   ),
                   w3,
-                  Container(
-                    width: 55.w,
-                    height: 4.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32),
-                      color: Color(0xff040811),
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        //  fillColor:  Color(0xff292E38),
-                        prefixIcon: const Icon(
-                          Icons.search_rounded,
-                          color: Color(0xff5C6978),
-                        ),
-                        hintText: ' Search',
-                        hintStyle: const TextStyle(
-                          fontSize: 12,
-                          color: Color(0xff5C6978),
-                        ),
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 1.5.h, horizontal: 2.w),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(20),
+                  InkWell(
+                    onTap: () => Get.to(() => SearchScreen()),
+                    child: Container(
+                      width: 55.w,
+                      height: 4.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(32),
+                        color: Color(0xff040811),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          //  fillColor:  Color(0xff292E38),
+                          prefixIcon: const Icon(
+                            Icons.search_rounded,
+                            color: Color(0xff5C6978),
+                          ),
+                          hintText: ' Search',
+                          hintStyle: const TextStyle(
+                            fontSize: 12,
+                            color: Color(0xff5C6978),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 1.5.h, horizontal: 2.w),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   Spacer(),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => SupportScreen());
+                      },
                       icon: const Icon(Icons.headset_mic_outlined,
                           color: Color(0xff5C6978))),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => NotificationScreen());
+                      },
                       icon: const Icon(Icons.notifications,
                           color: Color(0xff5C6978))),
                 ],
@@ -111,7 +122,9 @@ late TabController _packController;
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => ReferDetailsScreen());
+                    },
                     child: Image.asset(
                       "assets/images/refer.png",
                       height: 7.h,
@@ -127,7 +140,9 @@ late TabController _packController;
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => FeedScreen());
+                    },
                     child: Image.asset(
                       "assets/images/feed.png",
                       height: 6.h,
@@ -221,11 +236,16 @@ late TabController _packController;
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    "assets/images/user.png",
-                    height: 26.h,
-                    width: 48.w,
-                    fit: BoxFit.fill,
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => TraderHome());
+                    },
+                    child: Image.asset(
+                      "assets/images/user.png",
+                      height: 26.h,
+                      width: 48.w,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   Column(
                     children: [
@@ -247,7 +267,7 @@ late TabController _packController;
                 ],
               ),
               h1,
-              tabIndex(), 
+              tabIndex(),
               tabView(),
             ],
           ),
@@ -272,10 +292,10 @@ late TabController _packController;
           indicatorColor: btnclr,
           unselectedLabelStyle: hintStyleS,
           labelStyle: const TextStyle(
-                          color: whiteclr,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                        ),
+            color: whiteclr,
+            fontSize: 13,
+            fontWeight: FontWeight.bold,
+          ),
           controller: _packController,
           tabs: const [
             Tab(
@@ -291,7 +311,7 @@ late TabController _packController;
               child: Text("Volume"),
             ),
             Tab(
-              child:  Text("Losers"),
+              child: Text("Losers"),
             ),
           ]),
     );
@@ -299,17 +319,17 @@ late TabController _packController;
 
   tabView() {
     return SizedBox(
-       height: 25.h,
-               child:  TabBarView(
-               controller: _packController,
-                children:  [
-                  TrendingTab(),
-                  TrendingTab(),
-                  TrendingTab(),
-                  TrendingTab(),
-                  TrendingTab(),
-               ],
-       ),
+      height: 25.h,
+      child: TabBarView(
+        controller: _packController,
+        children: [
+          TrendingTab(),
+          TrendingTab(),
+          TrendingTab(),
+          TrendingTab(),
+          TrendingTab(),
+        ],
+      ),
     );
   }
 }

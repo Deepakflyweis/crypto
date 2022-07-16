@@ -21,8 +21,9 @@ class _TraderHomeState extends State<TraderHome> {
         child: Scaffold(
             body: MyWidget(
                 child: SingleChildScrollView(
-                    child: Column(children: [
-      Arrowback(),
+                 child: Column(
+                  children: [
+      // Arrowback(),
       h2,
       Container(
         width: 90.w,

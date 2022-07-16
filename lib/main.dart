@@ -1,5 +1,6 @@
  
 import 'package:crypto_app/view/nav_bar.dart';
+import 'package:crypto_app/view/onboard/onboard_index.dart';
 import 'package:crypto_app/view/terms/refer_details.dart';
 import 'package:crypto_app/view/traders/trader_home.dart';
  
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
            primarySwatch: Colors.blue,
         ),
-        home: NavBarIndex(0),
+        home: OnBoardScreen(),
       ),
     );
   }
