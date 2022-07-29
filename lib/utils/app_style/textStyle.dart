@@ -43,8 +43,8 @@ TextStyle txtStyleWB = const TextStyle(
 );
 TextStyle txtStyleBtn = const TextStyle(
   color: btnclr,
-  fontSize: 20,
-  fontWeight: FontWeight.w700,
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
 );
 
 TextStyle txtStyleWS = const TextStyle(
@@ -53,11 +53,11 @@ TextStyle txtStyleWS = const TextStyle(
   fontWeight: FontWeight.w500,
 );
 
-SizedBox h1 = SizedBox(height: 1.h);
-SizedBox h2 = SizedBox(height: 2.h);
-SizedBox h3 = SizedBox(height: 3.h);
-SizedBox h5 = SizedBox(height: 5.h);
+const SizedBox h1 = SizedBox(height: 10.0);
+const SizedBox h2 = SizedBox(height: 20.0);
+const SizedBox h3 = SizedBox(height: 30.0);
+const SizedBox h5 = SizedBox(height: 50.0);
 
-SizedBox w1 = SizedBox(width: 1.w);
-SizedBox w2 = SizedBox(width: 2.w);
-SizedBox w3 = SizedBox(width: 3.w);
+const SizedBox w1 = SizedBox(width: 10.0);
+const SizedBox w2 = SizedBox(width: 20.0);
+const SizedBox w3 = SizedBox(width: 30.0);

@@ -1,5 +1,6 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
+import 'package:crypto_app/view/search/search_screen.dart';
 import 'package:crypto_app/widgets/arrow_back.dart';
 import 'package:crypto_app/widgets/myWidget.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,41 @@ class _FAQScreenState extends State<FAQScreen> {
             children: [
               Arrowback(),
               h2,
+              Text("FAQs", style: txtStyleL,),
+              h2,
+              InkWell(
+              onTap: () => Get.to(() => SearchScreen()),
+              child: Container(
+            width: 80.w,
+            height: 5.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(32),
+              color: txtfieldclr,
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                //  fillColor:  Color(0xff292E38),
+                suffixIcon: const Icon(
+                  Icons.search_rounded,
+                  color: Color(0xffffffff),
+                ),
+                hintText: '  ',
+                hintStyle: const TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff5C6978),
+                ),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+          ),
+        ),
+       
+             h2,
               SizedBox(
                 width: 90.w,
                 child: ListView.builder(
@@ -39,7 +75,7 @@ class _FAQScreenState extends State<FAQScreen> {
                         width: 90.w, 
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(10),
                           color: txtfieldclr,
                         ),
                         child:  Theme(

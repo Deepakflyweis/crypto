@@ -1,9 +1,5 @@
- 
-import 'package:crypto_app/view/nav_bar.dart';
+
 import 'package:crypto_app/view/onboard/onboard_index.dart';
-import 'package:crypto_app/view/terms/refer_details.dart';
-import 'package:crypto_app/view/traders/trader_home.dart';
- 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';

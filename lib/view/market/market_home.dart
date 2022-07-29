@@ -37,14 +37,15 @@ late TabController _marketController;
         body: SingleChildScrollView(
           child: Column(
         children: [
-          Arrowback(), 
-
-          Container(
-            width: 90.w,
-            height: 4.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32),
-              color: Color(0xff040811),
+          Row(
+            children: [
+              Arrowback(),
+               Container(
+                width: 85.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(32),
+                  color: txtfieldclr,
             ),
             child: TextField(
               decoration: InputDecoration( 
@@ -66,9 +67,13 @@ late TabController _marketController;
               ),
             ),
           ),
-          h2,
+         
+            ],
+          ), 
+
+          h1,
           tabMarket(),
-          h2,
+          h1,
           tabViewMarket(), 
         ],
           ),

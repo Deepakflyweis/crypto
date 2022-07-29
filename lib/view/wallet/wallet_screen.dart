@@ -1,6 +1,7 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/view/wallet/wallet_overview.dart';
+import 'package:crypto_app/view/wallet/wallet_trading.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -39,7 +40,6 @@ class _WalletScreenState extends State<WalletScreen>
             h1, 
             tabViewMarket(),           
             
-
           ],
         ),
       ),
@@ -82,8 +82,8 @@ class _WalletScreenState extends State<WalletScreen>
         controller: _marketController,
         children:   [
           WalletOverview(),
-          WalletOverview(),
-          WalletOverview(),
+          WalletTrading(),
+          WalletTrading(),
         ],
       ),
     );

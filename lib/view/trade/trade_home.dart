@@ -1,6 +1,10 @@
 
+import 'package:container_tab_indicator/container_tab_indicator.dart';
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
+import 'package:crypto_app/view/trade/margin_screen.dart';
+import 'package:crypto_app/view/trade/perpetual.dart';
+import 'package:crypto_app/view/trade/spot_screen.dart';
 import 'package:crypto_app/view/trade/trade_position.dart'; 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -29,86 +33,133 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: Scaffold( 
         backgroundColor: divclr,
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-               Image.asset("assets/images/spot.png", width: 100.w,),
-              h2,
-              Row(
-              children: [
-                Image.asset("assets/images/arrow.png", width: 10.w,),
-                Text("RLCUSDT",style: txtStyleL,),
-                w2,
-                Text("+14.94%",style: txtStyleBtn,),
-                Spacer(), 
-                Image.asset("assets/images/gr.png", width: 10.w,), 
-                  ],
-                ),
-                
-                h2,
+          child: DefaultTabController(
+            length: 4,
+            child: Column( 
+              children:  [
+                h1,
                 Container(
-                padding: EdgeInsets.all(10), 
-                  child: Row(
-                    children: [
-                     Image.asset("assets/images/tr.png", width: 45.w,), 
-                     w2,
-                     Column(
-                       children: [
-                         Text("RLCUSDT",style: txtStyleWB,),
-                         SizedBox(  
-                          width: 40.w, 
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: 3,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(top: 4),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text("0.325",style: txtStyleN), 
-                                        const Spacer(),
-                                      const Text(
-                                        " 8.611704",style:  TextStyle(
-                                               color: Color(0xffEB5151),
-                                             ) ), 
-                                            ],
-                                    ),
-                                      Row(
-                                      children: [
-                                         Text("8.611704",style: txtStyleN),   
-                                           const Text(" 8.611704",style: TextStyle(
-                                              color: Color(0xff7ED570),
-                                             ) ),
-                                            ],
-                                    ),     
-                                  ],
-                                ),
-                            );
-                          },
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.5,color: greyclr),
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  child:   TabBar(  
+                      unselectedLabelStyle: hintStyleS,
+                      labelStyle: txtStyleN,
+                    tabs: const [
+                      Text('Spot', ),
+                      Text('Margin', ),
+                      Text('Future',  ),
+                      Text('Perpetual',  ),
+                    ],
+                    indicator: const ContainerTabIndicator(
+                      width: 96,
+                      height: 40,
+                      color: Color(0xff25DEB0), 
+                      radius: BorderRadius.all(Radius.circular(12.0)), 
                     ),
-               )
-          
-                       ],
-                     ),
-                    //  Spacer(),
-                    //  Text("AMT",style: hintStyle,), 
-        
-                      ],
-                     ),  
+                  ),
                 ),
-                h2,
-        
-                tabMarket(),
-                tabViewMarket(),
-            ],
+                h1,
+                 SizedBox(
+                  height: 50.h,
+                  child:  TabBarView(
+                    children:  [
+                      SpotScreen(),
+                       MarginScreen(),
+                       PerpetualScreen(), 
+                       PerpetualScreen(), 
+                    ],
+                  ),
+                ),  
+                  tabMarket(),
+                  tabViewMarket(),
+              ]
+          )
           ),
-        ),
-      ),
+        )
+        
+      //   SingleChildScrollView(
+      //     child: Column(
+      //       children: [
+      //         h1,
+
+      //          Image.asset("assets/images/spot.png", width: 100.w,),
+      //         h2,
+      //         Row(
+      //         children: [
+      //           Image.asset("assets/images/arrow.png", width: 10.w,),
+      //           Text("RLCUSDT",style: txtStyleL,),
+      //           w2,
+      //           Text("+14.94%",style: txtStyleBtn,),
+      //           Spacer(), 
+      //           Image.asset("assets/images/gr.png", width: 10.w,), 
+      //             ],
+      //           ),
+                
+      //           h2,
+      //           Container(
+      //           padding: EdgeInsets.all(10), 
+      //             child: Row(
+      //               children: [
+      //                Image.asset("assets/images/tr.png", width: 45.w,), 
+      //                w2,
+      //                Column(
+      //                  children: [
+      //                    Text("RLCUSDT",style: txtStyleWB,),
+      //                    SizedBox(  
+      //                     width: 40.w, 
+      //                     child: ListView.builder(
+      //                       shrinkWrap: true,
+      //                       itemCount: 3,
+      //                       physics: NeverScrollableScrollPhysics(),
+      //                       itemBuilder: (context, index) {
+      //                         return Padding(
+      //                           padding: const EdgeInsets.only(top: 4),
+      //                           child: Column(
+      //                             children: [
+      //                               Row(
+      //                                 children: [
+      //                                   Text("0.325",style: txtStyleN), 
+      //                                   const Spacer(),
+      //                                 const Text(
+      //                                   " 8.611704",style:  TextStyle(
+      //                                          color: Color(0xffEB5151),
+      //                                        ) ), 
+      //                                       ],
+      //                               ),
+      //                                 Row(
+      //                                 children: [
+      //                                    Text("8.611704",style: txtStyleN),   
+      //                                      const Text(" 8.611704",style: TextStyle(
+      //                                         color: Color(0xff7ED570),
+      //                                        ) ),
+      //                                       ],
+      //                               ),     
+      //                             ],
+      //                           ),
+      //                       );
+      //                     },
+      //               ),
+      //          )
+          
+      //                  ],
+      //                ),
+      //               //  Spacer(),
+      //               //  Text("AMT",style: hintStyle,), 
+        
+      //                 ],
+      //                ),  
+      //           ),
+      //           
+      //       ],
+      //     ),
+      //   ),
+       ),
     );
   }
 
@@ -154,3 +205,4 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
     );
   }
 }
+ 

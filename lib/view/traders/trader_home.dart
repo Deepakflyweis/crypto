@@ -19,17 +19,20 @@ class _TraderHomeState extends State<TraderHome> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: MyWidget(
-                child: SingleChildScrollView(
-                 child: Column(
-                  children: [
-      // Arrowback(),
-      h2,
-      Container(
-        width: 90.w,
+          backgroundColor: divclr,
+         body: SingleChildScrollView(
+        child: Column(
+         children: [
+          h1,
+      Row(
+        children: [
+          Arrowback(),
+           Container(
+        width: 85.w,
+        height: 5.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
-          color: Color(0xff292E38),
+          color: txtfieldclr,
         ),
         child: TextField(
           decoration: InputDecoration(
@@ -37,13 +40,17 @@ class _TraderHomeState extends State<TraderHome> {
               Icons.search_rounded,
               color: Color(0xffC4B5B5),
             ),
+            // suffixIcon: const Icon(
+            //   Icons.drive_file_rename_outline_sharp,
+            //   color: Color(0xffC4B5B5),
+            // ),
             hintText: ' Search',
             hintStyle: const TextStyle(
               fontSize: 12,
               color: Color(0xffC4B5B5),
             ),
             contentPadding:
-                EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
+            EdgeInsets.symmetric(vertical: 1.5.h, horizontal: 2.w),
             border: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(20),
@@ -51,80 +58,146 @@ class _TraderHomeState extends State<TraderHome> {
           ),
         ),
       ),
-      h2,
+     
+        ],
+      ), 
+      h1,
+      Container(
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+                   color: txtfieldclr,
+                   borderRadius: BorderRadius.circular(20)
+         ),
+         child: Row(
+          children: [
+            Text("Strategy",style: txtStyleN,),
+            Spacer(),
+            Text("Win rate",style: txtStyleN,),
+            Spacer(),
+            Text("Profits",style: txtStyleN,),
+          ],
+         ), 
+      ), 
       SizedBox(
-        width: 95.w,
+        width: 100.w, 
         child: ListView.builder(
           shrinkWrap: true,
           itemCount: 4,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.fromLTRB(8.0,6,8,0),
-              child: Card(
-                color: divclr,
-                child: Column(
-                  children: [
+              padding: const EdgeInsets.fromLTRB(8.0,12,8,0),
+              child: InkWell(
+                 onTap: () => Get.to(() => TraderIndexScreen()),
+                child: Container( 
+                 width: 98.w,
+                 height: 12.h,
+                 decoration: BoxDecoration(
+                   color: txtfieldclr,
+                   borderRadius: BorderRadius.circular(20)
+                 ),
+                 child: Row( 
+                   children: [
+                 //     w1,
+                 //     CircleAvatar(
+                 //     radius: 3.h,
+                 //     backgroundImage: const AssetImage(
+                 //       "assets/images/proimg.png",
+                 //     ),
+                 // ),
+                 // Text("People",style: txtStyleWB,), 
+                 
+                 Column( 
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   children: [
                     h1,
-                    Row(
-                      children: [
-                        w1,
-                        CircleAvatar(
-                        radius: 3.h,
-                        backgroundImage: const AssetImage(
-                          "assets/images/proimg.png",
-                        ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Crazy007",style: txtStyleWB,),
-                        Text("25/mo. from \$100 ",style: hintStyleS,),
-                      ],
-                    ),
-                    Icon(
-                      Icons.star_border,color: whiteclr,
-                    )
-                  ],
+                   Row( 
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   mainAxisAlignment: MainAxisAlignment.start,
+                   children: [
+                     w1,
+                     CircleAvatar(
+                     radius: 2.h,
+                     backgroundImage: const AssetImage(
+                       "assets/images/proimg.png",
+                     ),
                  ),
-                 h1,
-                 InkWell(
-                  onTap: () => Get.to(() => TraderIndexScreen()),
-                   child: Container(
-                    height: 10.h,
-                    width: 85.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff0C121E),
-                    ),
-                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                         Image.asset(
-                            "assets/images/line.png",
-                            width: 60.w,
-                            fit: BoxFit.fill,
-                          ),
+                 w1,
+                 Text("People",style: txtStyleWB,), 
+               ]
+                ),
+                  
+               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                 mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   w2,
+                   Icon(Icons.person,color: whiteclr,),
+                         // Image.asset("assets/images/aw.png",width: 5.w,),
+                   Text(" 150 ",style: hintStyleS,),
+                       ],
+                     ),
+                   ],
+                 ),
+                 w2,
+                  Image.asset(
+                  "assets/images/line.png",
+                   width: 25.w,
+                    fit: BoxFit.fill,
+                   ),
+              
+                 Spacer(),
+                 Column(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: [
+                       Text("500% ",style: txtStyleBtn,),
+                       Text("Vol 250k ",style: txtStyleN,),
+                     ],
+                   ), 
+                 // Icon(
+                 //   Icons.star_border,color: whiteclr,
+                 // )
+                    ],
+                   ),
                    
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("+950.7%",style: txtStyleBtn,),
-                          Text("Vol \$68.8m",style: hintStyleS,),
-                        ],
-                      ), 
-                    ]),
-                    ),
-                 ),
-                  h1
-                ]),
-              ),
-            );
+                  //  InkWell(
+                  //   onTap: () => Get.to(() => TraderIndexScreen()),
+                  //    child: Container(
+                  //     height: 10.h,
+                  //     width: 90.w,
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(16),
+                  //       color: Color(0xff1b1d29),
+                  //     ),
+                  //      child: Row(
+                  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //         children: [
+                  //          Image.asset(
+                  //             "assets/images/line.png",
+                  //             width: 25.w,
+                  //             fit: BoxFit.fill,
+                  //           ),
+                
+                  //       Column(
+                  //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //         crossAxisAlignment: CrossAxisAlignment.center,
+                  //         children: [
+                  //           Text("+950.7%",style: txtStyleBtn,),
+                  //           Text("Vol \$68.8m",style: hintStyleS,),
+                  //         ],
+                  //       ), 
+                  //     ]),
+                  //     ),
+                  //  ),
+                  //   h1
+                  
+                ),
+              ));
           },
         ),
       )
-    ])))));
+    ]))));
   }
 }

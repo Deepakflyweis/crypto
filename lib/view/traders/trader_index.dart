@@ -1,10 +1,8 @@
  
 import 'package:crypto_app/utils/appColor/app_colors.dart';
-import 'package:crypto_app/utils/app_style/textStyle.dart';
-import 'package:crypto_app/view/traders/trader_home.dart';
+import 'package:crypto_app/utils/app_style/textStyle.dart'; 
 import 'package:crypto_app/view/traders/trader_overview.dart';
-import 'package:crypto_app/view/traders/trader_position.dart';
-import 'package:crypto_app/widgets/myWidget.dart';
+import 'package:crypto_app/view/traders/trader_position.dart'; 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -45,7 +43,7 @@ late TabController _packController;
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                  onPressed: () => Get.offAll(() => TraderHome()),
+                  onPressed: () => Get.back(),
                   icon: const Icon(
                     Icons.arrow_back,
                     color: whiteclr,
@@ -56,7 +54,7 @@ late TabController _packController;
               ),
               h2,
               CircleAvatar(
-              radius: 8.h,
+              radius: 60,
               backgroundImage: AssetImage(
                 "assets/images/trimg.png",
               ),
@@ -67,7 +65,8 @@ late TabController _packController;
             tabTrader(),
             Divider(color: whiteclr,),
             tabViewTrader(),
-
+            h2,
+            Image.asset("assets/images/ROI.png", width: 90.w,fit: BoxFit.fill,),
             h3,
              GestureDetector(
               onTap: () {
@@ -114,7 +113,7 @@ late TabController _packController;
         color: divclr,
                child: TabBarView(
                controller: _packController,
-                children:  [
+                children: const [
                   TraderOverview(),
                   TraderPositionScreen(),
                   TraderPositionScreen(),

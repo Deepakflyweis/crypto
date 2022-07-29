@@ -112,14 +112,13 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                 currtpage == contents.length - 1 ? 'Next' : "Next",
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,color: blckclr,fontSize: 15),
-              ),
-            ),
-          ),
-          
-   ],
-  ),
- ),
- ),
+                ),
+               ),
+               ), 
+            ],
+        ),
+      ),
+      ),
   );
   }
 }

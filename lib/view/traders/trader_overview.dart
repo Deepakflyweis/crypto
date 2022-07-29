@@ -23,8 +23,9 @@ class _TraderOverviewState extends State<TraderOverview> {
             LineChartBarData(spots: [ 
               const FlSpot(1, 3),
               const FlSpot(7, 10),
-              const FlSpot(14, 7),
+              const FlSpot(14, 7), 
               const FlSpot(11, 3),  
+              const FlSpot(16, 20),
               const FlSpot(28, 12), 
             ])
           ]),

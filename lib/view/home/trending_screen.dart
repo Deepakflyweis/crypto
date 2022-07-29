@@ -24,17 +24,17 @@ class _TrendingTabState extends State<TrendingTab> {
             children: [
               Text(
                 "Coin",
-                style: hintStyle,
+                style: hintStyleS,
               ),
               
               Text(
                 "     Price (USDT)",
-                style: hintStyle,
+                style: hintStyleS,
               ),
               
               Text(
                 "24h Change",
-                style: hintStyle,
+                style: hintStyleS,
               ),
             ],
           ),
@@ -60,7 +60,7 @@ class _TrendingTabState extends State<TrendingTab> {
                               ),
                             ),
                           w2,
-                           Text("BTC",style: txtStyleWB,),
+                           Text("BTC",style: txtStyleN,),
                             
                           Spacer(),
                            Column(
@@ -76,6 +76,7 @@ class _TrendingTabState extends State<TrendingTab> {
                               ],
                            ),
                            Spacer(),
+                           
                            const Text("-0.27%",
                               style: TextStyle(
                                 color: Colors.red,

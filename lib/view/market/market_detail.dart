@@ -66,9 +66,9 @@ late TabController _marketController;
                 children: [
                   w1,
                   CircleAvatar(
-                    radius: 4.h,
+                    radius: 3.h,
                     backgroundImage: const AssetImage(
-                      "assets/images/proimg.png",
+                      "assets/images/market.png",
                     ),
                   ),
                   w2,
@@ -98,6 +98,7 @@ late TabController _marketController;
                             "Open ",
                             style: hintStyleS,
                           ),
+                          w2,
                           Text(
                             "153.54  ",
                             style: hintStyleS,
@@ -110,6 +111,7 @@ late TabController _marketController;
                             "High ",
                             style: hintStyleS,
                           ),
+                          w2,
                           Text(
                             "153.54  ",
                             style: hintStyleS,
@@ -122,6 +124,7 @@ late TabController _marketController;
                             "Low ",
                             style: hintStyleS,
                           ),
+                          w2,
                           Text(
                             "153.54  ",
                             style: hintStyleS,

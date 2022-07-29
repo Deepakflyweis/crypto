@@ -25,10 +25,10 @@ class SubscriberChart extends StatelessWidget {
       
      return Container(
       height: 30.h, 
-      color: divclr,
+      color: txtfieldclr,
       padding: EdgeInsets.all(10), 
       child: Card(
-        color: divclr,
+        color: txtfieldclr,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

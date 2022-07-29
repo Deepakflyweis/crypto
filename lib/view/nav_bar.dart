@@ -1,5 +1,6 @@
 
  
+import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/view/home/home_screen.dart';
 import 'package:crypto_app/view/market/market_home.dart';
 import 'package:crypto_app/view/search/search_screen.dart';
@@ -58,7 +59,7 @@ class _NavBarIndexState extends State<NavBarIndex> {
     return BottomNavigationBar(
         elevation: 2,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xff182030),
+        backgroundColor: txtfieldclr,
         selectedItemColor: const Color(0xff25DEB0),
         unselectedItemColor: const Color(0xff898886),
         selectedFontSize: 12,

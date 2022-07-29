@@ -24,33 +24,36 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10),
         ),
-        color: Color(0xff182030),
+        color: txtfieldclr,
       ),
       child: Column(
         children: [
-          Row(
-            children: [
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: divclr),
-                  onPressed: () {},
-                  child: Text(
-                    "Spot",
-                    style: txtStyleN,
-                  )),
-              w2,
-              Text(
-                "Futures",
-                style: hintStyleS,
-              ),
-              Spacer(),
-              const Icon(
-                Icons.precision_manufacturing_outlined,
-                color: whiteclr,
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left:8.0,right: 8),
+            child: Row(
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: divclr),
+                    onPressed: () {},
+                    child: Text(
+                      "Spot",
+                      style: txtStyleN,
+                    )),
+                w2,
+                Text(
+                  "Futures",
+                  style: hintStyleS,
+                ),
+                Spacer(),
+                const Icon(
+                  Icons.scale_rounded,
+                  color: whiteclr,
+                )
+              ],
+            ),
           ),
           h2,
-          SizedBox(
+          Container(
             width: 98.w,
             child: ListView.builder(
               shrinkWrap: true,

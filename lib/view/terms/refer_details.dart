@@ -61,8 +61,8 @@ class _ReferDetailsScreenState extends State<ReferDetailsScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-        body: MyWidget(
-        child: SingleChildScrollView(
+          backgroundColor: divclr,
+        body: SingleChildScrollView(
         child: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,19 +78,57 @@ class _ReferDetailsScreenState extends State<ReferDetailsScreen> {
                   )),
             ],
           ),
+
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('''  REFER AND
+  EARN''',style: txtStyleWB,),
+          ),
           h2,
-          Row(
-            children: [
-              Text("Referal income", style: txtStyleWB),
-              Spacer(),
-              Text("Last week", style: hintStyleS),
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.arrow_drop_down_sharp,
-                    color: whiteclr,
-                  ))
-            ],
+          Container(
+            height: 8.h,
+            width: 90.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: txtfieldclr,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Image.asset(
+                  "assets/images/tweet.png",
+                  height: 5.h,
+                  fit: BoxFit.fitHeight,
+                ),
+                Image.asset(
+                  "assets/images/fb.png",
+                  height: 5.h,
+                  fit: BoxFit.fitHeight,
+                ),
+                Image.asset(
+                  "assets/images/tweet.png",
+                  height: 5.h,
+                  fit: BoxFit.fitHeight,
+                ),
+              ],
+            ),
+          ),
+          h2,
+          Container(
+            color: txtfieldclr,
+            child: Row(
+              children: [
+                Text("Referal income", style: txtStyleWB),
+                Spacer(),
+                Text("Last week", style: hintStyleS),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.arrow_drop_down_sharp,
+                      color: whiteclr,
+                    ))
+              ],
+            ),
           ),
           SubscriberChart( 
             data: data,
@@ -118,7 +156,6 @@ class _ReferDetailsScreenState extends State<ReferDetailsScreen> {
             ),
        
         ]),
-      ),
-    )));
+      )));
   }
 }
