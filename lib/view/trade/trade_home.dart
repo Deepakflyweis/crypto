@@ -64,7 +64,7 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
                     ),
                   ),
                 ),
-                h1,
+             
                  SizedBox(
                   height: 50.h,
                   child:  TabBarView(

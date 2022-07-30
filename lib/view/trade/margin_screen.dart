@@ -18,7 +18,7 @@ class _MarginScreenState extends State<MarginScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        h2,
+        
         Row(
           children: [
             Image.asset(
@@ -30,19 +30,24 @@ class _MarginScreenState extends State<MarginScreen> {
               style: txtStyleWB,
             ),
             w2,
-            Image.asset(
-              "assets/images/m1.png",
-              width: 27.w,
+            GestureDetector(
+              onTap: () => _displayMargin(),
+              child: Image.asset(
+                "assets/images/m1.png",
+                width: 27.w,
+              ),
             ),
             w1,
-            Image.asset(
+           GestureDetector(
+              onTap: () => _displayCross(),
+            child: Image.asset(
               "assets/images/m2.png",
               width: 20.w,
-            ),
-            Spacer(),
+            ),),
+          w2,
             GestureDetector(
               onTap: () {
-                _displayDialog(context);
+                _displayDialog();
                 // filterDialog();
               },
               child: Image.asset(
@@ -73,7 +78,7 @@ class _MarginScreenState extends State<MarginScreen> {
           child: Row(
             children: [
               Image.asset("assets/images/tr.png", width: 44.w),
-              w2,
+              w1,
               Image.asset(
                 "assets/images/tr1.png",
                 width: 44.w,
@@ -85,26 +90,126 @@ class _MarginScreenState extends State<MarginScreen> {
     );
   }
 
-  _displayDialog(BuildContext context) async {
-    _selected = await showDialog(
+  _displayCross()  {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          width: 30.w,
+          child: SimpleDialog( 
+          backgroundColor: txtfieldclr,
+            title:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                     "BTC ",
+                       style: txtStyleN,
+               ),
+               h1,
+                Text(
+                     "USDT ",
+                       style: txtStyleN,
+               ), 
+            h1,
+             Center(
+               child: GestureDetector(
+                onTap: () => Get. back(),
+                 child: Image.asset(
+                      "assets/images/cancel.png",
+                         height: 6.h,
+                         width: 40.w, 
+                          fit: BoxFit.fill,
+                      ),
+               ),
+             )  ,
+             h1,
+              ],
+            ),  
+          ),
+        );
+      },
+    );  
+ 
+  }
+
+  _displayMargin()  {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          width: 40.w,
+          child: SimpleDialog( 
+          backgroundColor: txtfieldclr,
+            title:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                     "Limit ",
+                       style: txtStyleN,
+               ),
+               h1,
+                Text(
+                     "Market ",
+                       style: txtStyleN,
+               ),
+               h1,
+               Text(
+                     "Stop Limit ",
+                       style: txtStyleN,
+               ),
+               h1,
+               Text(
+                     "Stop Market ",
+                       style: txtStyleN,
+               ),
+               h1,
+               Text(
+                     "Hidden ",
+                       style: txtStyleN,
+               ),
+               h1,
+             Center(
+               child: GestureDetector(
+                onTap: () => Get. back(),
+                 child: Image.asset(
+                      "assets/images/cancel.png",
+                         height: 6.h,
+                         width: 40.w, 
+                          fit: BoxFit.fill,
+                      ),
+               ),
+             )  ,
+             h1,
+              ],
+            ),  
+          ),
+        );
+      },
+    );  
+ 
+  }
+
+  _displayDialog()  {
+    return showDialog(
       context: context,
       builder: (BuildContext context) {
         return Expanded(
           child: SimpleDialog( 
             backgroundColor: divclr,
-            title: Row( 
-               children: [
-                Text(
-                 "Margin mode ",
-                   style: txtStyleN,
-                   ),
-                    Spacer(),
-                   IconButton(onPressed: () => Get.back(),
-                    icon: Icon(Icons.close,color: whiteclr,)),
-                   ],
-                ), 
-            children:[
-              Divider(color: whiteclr,),
+            title: Column(
+              children: [
+                Row( 
+                   children: [
+                    Text(
+                     "Margin mode ",
+                       style: txtStyleN,
+                       ),
+                        Spacer(),
+                       IconButton(onPressed: () => Get.back(),
+                        icon: Icon(Icons.close,color: whiteclr,)),
+                       ],
+                    ),
+                     Divider(color: whiteclr,),
               Row( 
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -132,21 +237,15 @@ class _MarginScreenState extends State<MarginScreen> {
               Image.asset(
                   "assets/images/d3.png",
                      height: 6.h,
-                     width: 50.w, 
+                     width: 40.w, 
                       fit: BoxFit.fill,
                   )
-            ],
-            //backgroundColor: Colors.green,
+              ],
+            ), 
           ),
         );
       },
-    );
-
-    if(_selected != null)
-      {
-        setState(() {
-          _selected = _selected;
-        });
-      }
+    );  
+ 
   }
 }

@@ -23,7 +23,7 @@ class TraderPositionScreen extends StatelessWidget {
               padding: EdgeInsets.all(6),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Color(0xff171A1F),
+                color: txtfieldclr
               ),
               child: Row(
                 children: [

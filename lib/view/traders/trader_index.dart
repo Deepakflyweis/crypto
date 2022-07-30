@@ -54,26 +54,37 @@ late TabController _packController;
               ),
               h2,
               const CircleAvatar(
-              radius: 60,
+              radius: 35,
               backgroundImage: AssetImage(
                 "assets/images/trimg.png",
               ),
             ),
             h1,
-            Text("Crazy007",style: txtStyleWB,),
-            h2,
+            const Text("Crazy007",style: TextStyle(
+                  color: whiteclr,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                )),
+            h1,
             tabTrader(),
             Divider(color: whiteclr,),
             tabViewTrader(),
             h2,
-            Image.asset("assets/images/ROI.png", width: 90.w,fit: BoxFit.fill,),
+            Image.asset("assets/images/TI.png",  
+             width: 95.w,
+             fit: BoxFit.fill,),
+             h1,
+            Image.asset("assets/images/ROI.png",
+            height: 12.h,
+             width: 90.w,fit: BoxFit.fill,),
+             
             h3,
              GestureDetector(
               onTap: () {
                 
               },
               child: Image.asset("assets/images/copytrader.png", width: 80.w,fit: BoxFit.fill,)),
-
+              h2
           ],
           ),
         ),
@@ -83,28 +94,25 @@ late TabController _packController;
   }
 
   tabTrader() {
-    return Container(  
-        // color: divclr, 
-      child: TabBar(
-          indicatorSize: TabBarIndicatorSize.label,
-          indicatorWeight: 2.0,
-          indicatorColor: btnclr,
-          unselectedLabelStyle: txtStyleN,
-          labelStyle:txtStyleN,
-          controller: _packController,
-          tabs: const [
-            Tab(
-              child: Text("Overview"),
-            ),
-            Tab(
-              child: Text("Positions"),
-            ),
-            Tab(
-              child: Text("History"),
-            ),
-            
-          ]),
-    );
+    return TabBar(
+        indicatorSize: TabBarIndicatorSize.label,
+        indicatorWeight: 2.0,
+        indicatorColor: btnclr,
+        unselectedLabelStyle: txtStyleN,
+        labelStyle:txtStyleN,
+        controller: _packController,
+        tabs: const [
+          Tab(
+            child: Text("Overview"),
+          ),
+          Tab(
+            child: Text("Positions"),
+          ),
+          Tab(
+            child: Text("History"),
+          ),
+          
+        ]);
   }
 
   tabViewTrader() {

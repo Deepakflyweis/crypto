@@ -1,4 +1,3 @@
-
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +12,11 @@ class PerpetualScreen extends StatefulWidget {
 }
 
 class _PerpetualScreenState extends State<PerpetualScreen> {
-  var _selected ="";
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-         h2,
+         
             Row(
             children: [
               Image.asset("assets/images/arrow.png", width: 10.w,),
@@ -26,10 +24,13 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
               w1,
               Text("+14.94%",style: txtStyleBtn,),
               Spacer(), 
-              Image.asset("assets/images/m2.png", width: 20.w,), 
-              w2,
+               GestureDetector(
+                 onTap: () => _displayCross(),
+                child:Image.asset("assets/images/m2.png", width: 20.w,), 
+                ),
+                 w2,
               GestureDetector(
-                 onTap: () => _displayDialog(context),
+                 onTap: () => _displayDialog(),
                 child: Image.asset("assets/images/candle.png", width: 8.w,)), 
                ],
               ),
@@ -57,55 +58,48 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
                    Image.asset("assets/images/tr1.png", width: 44.w,), 
                    ],
                    ),  
-              ),
-              
-          
+              ), 
       ],
     );
   }
 
-  _displayDialog(BuildContext context) async {
-    _selected = await showDialog(
+  _displayDialog()  {
+    return showDialog(
       context: context,
       builder: (BuildContext context) {
         return Expanded(
           child: SimpleDialog( 
             backgroundColor: divclr,
-            title: Row( 
-               children: [
-                Text(
-                 "Margin mode ",
-                   style: txtStyleN,
-                   ),
-                    Spacer(),
-                   IconButton(
-                    onPressed: () => Get.back(),
-                    icon: Icon(Icons.close,color: whiteclr,)),
-                   ],
-                ), 
-            children:[
-              Divider(color: whiteclr,),
+            title: Column(
+              children: [
+                Row( 
+                   children: [
+                    Text(
+                     "Margin mode ",
+                       style: txtStyleN,
+                       ),
+                        Spacer(),
+                       IconButton(onPressed: () => Get.back(),
+                        icon: Icon(Icons.close,color: whiteclr,)),
+                       ],
+                    ),
+                     Divider(color: whiteclr,),
+              h1,
               Row( 
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          GestureDetector(
-                            onTap: () =>  Get.back(),
-                            child: Image.asset(
-                                    "assets/images/d1.png",  
-                                      height: 5.h,
-                                     width: 30.w, 
-                                    fit: BoxFit.fill,
-                             ),
-                          ), 
-                          GestureDetector(
-                            onTap: () =>  Get.back(),
-                            child: Image.asset(
-                                 "assets/images/d2.png",
-                                   height: 5.h,
-                              width: 30.w, 
+                          Image.asset(
+                                  "assets/images/d1.png",  
+                                    height: 5.h,
+                                   width: 30.w, 
                                   fit: BoxFit.fill,
-                             ),
-                          )
+                           ), 
+                          Image.asset(
+                               "assets/images/d2.png",
+                                 height: 5.h,
+                            width: 30.w, 
+                                fit: BoxFit.fill,
+                           )
                         ],
               ),
               h1,
@@ -115,27 +109,59 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
               Text("What is Cross margin and isolated margin?",
               style: txtStyleN,maxLines: 2,overflow: TextOverflow.fade,),
               h2,
-              GestureDetector(
-                onTap: () =>  Get.back(), 
-                child: Image.asset(
-                    "assets/images/d3.png",
-                       height: 6.h,
-                       width: 50.w, 
-                        fit: BoxFit.fill,
-                    ),
-              )
-            ],
-            //backgroundColor: Colors.green,
+              Image.asset(
+                  "assets/images/d3.png",
+                     height: 6.h,
+                     width: 40.w, 
+                      fit: BoxFit.fill,
+                  )
+              ],
+            ), 
           ),
         );
       },
-    );
-
-    if(_selected != null)
-      {
-        setState(() {
-          _selected = _selected;
-        });
-      }
+    );  
   }
+  _displayCross()  {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          width: 30.w,
+          child: SimpleDialog( 
+          backgroundColor: txtfieldclr,
+            title:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                     "BTC ",
+                       style: txtStyleN,
+               ),
+               h1,
+                Text(
+                     "USDT ",
+                       style: txtStyleN,
+               ), 
+            h1,
+             Center(
+               child: GestureDetector(
+                onTap: () => Get. back(),
+                 child: Image.asset(
+                      "assets/images/cancel.png",
+                         height: 6.h,
+                         width: 40.w, 
+                          fit: BoxFit.fill,
+                      ),
+               ),
+             )  ,
+             h1,
+              ],
+            ),  
+          ),
+        );
+      },
+    );  
+ 
+  }
+
 }
