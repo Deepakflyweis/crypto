@@ -53,7 +53,7 @@ late TabController _packController;
                 ],
               ),
               h2,
-              CircleAvatar(
+              const CircleAvatar(
               radius: 60,
               backgroundImage: AssetImage(
                 "assets/images/trimg.png",

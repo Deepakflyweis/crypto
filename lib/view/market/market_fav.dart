@@ -2,9 +2,7 @@ import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/view/market/market_detail.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart'; 
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
@@ -21,40 +19,53 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
+          topLeft: Radius.circular(12),
+          topRight: Radius.circular(12),
         ),
         color: txtfieldclr,
       ),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left:8.0,right: 8),
-            child: Row(
-              children: [
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: divclr),
-                    onPressed: () {},
-                    child: Text(
-                      "Spot",
-                      style: txtStyleN,
-                    )),
-                w2,
-                Text(
-                  "Futures",
-                  style: hintStyleS,
-                ),
-                Spacer(),
-                const Icon(
-                  Icons.scale_rounded,
-                  color: whiteclr,
-                )
-              ],
+          Image.asset(
+              "assets/images/usdt.png", 
+              width: 95.w,
+              height: 4.h,
+              fit: BoxFit.fill,
+           ), 
+           h1,
+          // Padding(
+          //   padding: const EdgeInsets.only(left:8.0,right: 8),
+          //   child: Row(
+          //     children: [
+          //       ElevatedButton(
+          //           style: ElevatedButton.styleFrom(backgroundColor: divclr),
+          //           onPressed: () {},
+          //           child: Text(
+          //             "Spot",
+          //             style: txtStyleN,
+          //           )),
+          //       w2,
+          //       Text(
+          //         "Futures",
+          //         style: hintStyleS,
+          //       ),
+          //       Spacer(),
+          //       const Icon(
+          //         Icons.edit,
+          //         color: whiteclr,
+          //       )
+          //     ],
+          //   ),
+          // ), 
+          Image.asset(
+              "assets/images/name.png", 
+              width: 95.w,
+              height: 3.h,
+              fit: BoxFit.fill,
             ),
-          ),
-          h2,
+          h1,
           Container(
-            width: 98.w,
+            width: 100.w,
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: 10,
@@ -66,7 +77,7 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
                   },
                   child: Row(
                     children: [
-                      w2,
+                     w1,
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,6 +118,7 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
                             "-9.75%",
                             style: txtStyleN,
                           )),
+                          w1,
                     ],
                   ),
                 );

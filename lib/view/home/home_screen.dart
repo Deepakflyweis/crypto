@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen>
               priceSection(),
               h1,
               searchMenu2(),
-              h2,
+              h1,
               userpro(),
               h1,
               tabIndex(),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       child: TabBar(
           indicatorSize: TabBarIndicatorSize.label,
-          indicatorWeight: 2.0,
+          indicatorWeight: 3.0,
           indicatorColor: btnclr,
           unselectedLabelStyle: hintStyleS,
           labelStyle: const TextStyle(
@@ -306,8 +306,8 @@ class _HomeScreenState extends State<HomeScreen>
 
   priceSection() {
     return Container(
-      width: 95.w,
-      height: 9.h,
+      width: 98.w,
+      height: 8.3.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -424,7 +424,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   searchMenu2() {
     return Container(
-      width: 95.w,
+      width: 98.w,
       height: 4.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
@@ -443,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
           hintText: ' Lorem ipsum dolor sit amet, consectetur adipiscing',
           hintStyle: const TextStyle(
-            fontSize: 12,
+            fontSize: 13,
             color: Color(0xff5C6978),
           ),
           contentPadding:
@@ -487,6 +487,7 @@ class _HomeScreenState extends State<HomeScreen>
                     child: Container(
                       height: 29.h,
                       width: 44.w,
+                      padding: EdgeInsets.fromLTRB(5, 10, 0, 0),
                       decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
                             bottomRight: Radius.circular(10),
@@ -496,30 +497,39 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                           color: txtfieldclr,
                           border: Border.all(color: divclr, width: 1.0)),
-                      child: Column(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [ 
-                              CircleAvatar(
-                              radius: 3.h,
+                          CircleAvatar(
+                              radius: 2.h,
                               backgroundImage: const AssetImage(
                                 "assets/images/proimg.png",
                               ),
                               ),
                               w1,
-                              Text("People",style: txtStyleWB,),
-                              Spacer(),
-                              Text("8.5",style: txtStyleBtn,), 
+                          Column( 
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [  
+                              Text("Crazy007",style: txtStyleWB,),
+                              Text("25% of portfolio",style: hintStyleS,),
+                              const Text("950%(25%)",
+                              style: TextStyle(
+                                color: btnclr,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),), 
+                              
+                              // Text("8.5",style: txtStyleBtn,), 
+                        Image.asset(
+                          "assets/images/line.png",
+                          width: 25.w,
+                          fit: BoxFit.fill,
+                          ),
                             ],
                           ),
                           h1,
-                          Text("500%",style: txtStyleBtn,),
-                          Text("VOL 250K",style: txtStyleN,),
-                          Image.asset(
-                          "assets/images/line.png",
-                          width: 40.w,
-                          fit: BoxFit.fill,
-                          ),
+                          
+                          
                         ],
                       ),
                     ),

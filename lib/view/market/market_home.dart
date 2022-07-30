@@ -70,8 +70,7 @@ late TabController _marketController;
          
             ],
           ), 
-
-          h1,
+ 
           tabMarket(),
           h1,
           tabViewMarket(), 
@@ -108,7 +107,7 @@ late TabController _marketController;
   tabViewMarket() {
     return Container( 
       height: 85.h,
-      width: 98.w,
+      width: 100.w,
         color: divclr,
                child: TabBarView(
                controller: _marketController,

@@ -36,141 +36,151 @@ late TabController _marketController;
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: MyWidget(
-            child: SingleChildScrollView(
+        backgroundColor: divclr,
+        body: SingleChildScrollView(
           child: Column(
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () => Get.back(),
-                      icon: const Icon(
-                        Icons.arrow_back,
-                        color: whiteclr,
-                        size: 25,
-                      )),
-                  Spacer(),
-                  const Icon(
-                    Icons.star,
+              IconButton(
+                  onPressed: () => Get.back(),
+                  icon: const Icon(
+                    Icons.arrow_back,
                     color: whiteclr,
-                  ),
-                  w2,
-                  const Icon(
-                    Icons.share,
-                    color: whiteclr,
-                  ),
-                ],
+                    size: 25,
+                  )),
+              Spacer(),
+              const Icon(
+                Icons.star,
+                color: whiteclr,
               ),
-              
-              Row(
+              w2,
+              const Icon(
+                Icons.share,
+                color: whiteclr,
+              ),
+            ],
+          ),
+          
+          Row(
+            children: [
+              w1,
+              CircleAvatar(
+                radius: 2.h,
+                backgroundImage: const AssetImage(
+                  "assets/images/market.png",
+                ),
+              ),
+              w2,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  w1,
-                  CircleAvatar(
-                    radius: 3.h,
-                    backgroundImage: const AssetImage(
-                      "assets/images/market.png",
-                    ),
-                  ),
-                  w2,
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Text(
+                    "ETH/USDT",
+                    style: txtStyleWB,
+                  ), 
+                  Row(
                     children: [
-                      Text(
-                        "ETH/USDT",
-                        style: txtStyleWB,
-                      ),
-                      h1,
+                     const  ImageIcon(
+                      AssetImage("assets/images/trr.png"),
+                      color: btnclr,
+                      size: 11,
+                    ),
+                    w1,
                       Text(
                         "\$14,582   " " +8.8%",
                         style: hintStyleS,
                       ),
                     ],
                   ),
-                  Spacer(),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Open ",
-                            style: hintStyleS,
-                          ),
-                          w2,
-                          Text(
-                            "153.54  ",
-                            style: hintStyleS,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "High ",
-                            style: hintStyleS,
-                          ),
-                          w2,
-                          Text(
-                            "153.54  ",
-                            style: hintStyleS,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Low ",
-                            style: hintStyleS,
-                          ),
-                          w2,
-                          Text(
-                            "153.54  ",
-                            style: hintStyleS,
-                          ),
-                        ],
-                      ), 
-                    ],
-                  ), 
-                   
                 ],
               ),
-              h2,
-              TraderOverview(),
-              h1,
-              tabMarket(),
-              h1,
-              Center(
-                child: Image.asset("assets/images/bs.png",width: 50.w,)),
-              
-              h2,
-              Image.asset("assets/images/ttpt.png",width: 96.w,),
-            h2, 
-
-            tabViewMarket(),
-            h2,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    
-                  },
-                  child: Image.asset("assets/images/buy.png",width: 40.w,),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    
-                  },
-                  child: Image.asset("assets/images/sell.png",width: 40.w,),
-                ),
-              ],
-            ),
-            h3,   
+              Spacer(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Open ",
+                        style: hintStyleS,
+                      ),
+                      w2,
+                      Text(
+                        "153.54  ",
+                        style: hintStyleS,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "High ",
+                        style: hintStyleS,
+                      ),
+                      w2,
+                      Text(
+                        "153.54  ",
+                        style: hintStyleS,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Low ",
+                        style: hintStyleS,
+                      ),
+                      w2,
+                      Text(
+                        "153.54  ",
+                        style: hintStyleS,
+                      ),
+                    ],
+                  ), 
+                ],
+              ), 
+               
             ],
           ),
-        )),
+          h2,
+          TraderOverview(),
+          h1,
+          tabMarket(),
+          h1,
+          Center(
+            child: Image.asset("assets/images/bs.png",width: 50.w,
+            height: 2.5.h,fit: BoxFit.fill,)),
+          
+          h2,
+          Image.asset("assets/images/ttpt.png",width: 96.w,),
+        h1, 
+
+        tabViewMarket(),
+        h1,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: Image.asset("assets/images/buy.png",width: 40.w,),
+            ),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: Image.asset("assets/images/sell.png",width: 40.w,),
+            ),
+          ],
+        ),
+        h3,   
+        ],
+          ),
+        ),
       ),
     );
   }
