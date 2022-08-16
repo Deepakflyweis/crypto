@@ -61,7 +61,7 @@ class _WalletOverviewState extends State<WalletOverview> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              h2,
+              h1,
               totalValueSection(),
               
               // Container(
@@ -219,7 +219,9 @@ class _WalletOverviewState extends State<WalletOverview> {
       ),
       child: Column(
         children: [
-          SubscriberChart(data: data),
+          // SubscriberChart(data: data),
+           Image.asset("assets/images/w1.png", 
+                    width: double.infinity,), 
           h1,
           // Row(
           //   children: [

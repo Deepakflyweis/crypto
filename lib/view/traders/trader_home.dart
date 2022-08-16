@@ -1,8 +1,7 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/view/traders/trader_index.dart';
-import 'package:crypto_app/widgets/arrow_back.dart';
-import 'package:crypto_app/widgets/myWidget.dart';
+import 'package:crypto_app/widgets/arrow_back.dart'; 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -109,7 +108,7 @@ class _TraderHomeState extends State<TraderHome> {
                  
                  Column( 
                    crossAxisAlignment: CrossAxisAlignment.start,
-                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                     h1,
                    Row( 
@@ -133,26 +132,34 @@ class _TraderHomeState extends State<TraderHome> {
                  mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                    w2,
-                   Icon(Icons.person,color: whiteclr,),
+                   Icon(Icons.person,color: whiteclr,size: 30,),
                          // Image.asset("assets/images/aw.png",width: 5.w,),
                    Text(" 150 ",style: hintStyleS,),
                        ],
                      ),
                    ],
                  ),
-                 w2,
+                 w3,
                   Image.asset(
-                  "assets/images/line.png",
+                  "assets/images/line1.png",
                    width: 25.w,
                     fit: BoxFit.fill,
-                   ),
-              
+                   ), 
+                   
                  Spacer(),
                  Column(
-                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                     crossAxisAlignment: CrossAxisAlignment.center,
+                     mainAxisAlignment: MainAxisAlignment.center, 
                      children: [
-                       Text("500% ",style: txtStyleBtn,),
+                       Row(
+                         children: [
+                            const ImageIcon(
+                            AssetImage("assets/images/trr.png"),
+                            color: Colors.greenAccent,
+                            size: 14,
+                          ),
+                           Text("500% ",style: txtStyleBtn,),
+                         ],
+                       ),
                        Text("Vol 250k ",style: txtStyleN,),
                      ],
                    ), 

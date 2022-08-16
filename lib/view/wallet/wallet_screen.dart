@@ -47,34 +47,38 @@ class _WalletScreenState extends State<WalletScreen>
   }
 
   tabMarket() {
-    return TabBar(
-        indicatorSize: TabBarIndicatorSize.label,
-        indicatorWeight: 3.0,
-        indicatorColor: btnclr,
-        unselectedLabelStyle: hintStyleS,
-        labelStyle: txtStyleN,
-        controller: _marketController,
-        tabs: const [
-          Tab(
-            child: Text("Overview"),
-          ),
-          Tab(
-            child: Text("Trading"),
-          ),
-          Tab(
-            child: Text("Funding"),
-          ),
-        ]);
+    return Container(
+      height: 5.h,
+      child: TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 3.0,
+          indicatorColor: btnclr,
+          unselectedLabelStyle: hintStyleS,
+          labelStyle: txtStyleN,
+          controller: _marketController,
+          tabs: const [
+            Tab(
+              child: Text("Overview"),
+            ),
+            Tab(
+              child: Text("Trading"),
+            ),
+            Tab(
+              child: Text("Funding"),
+            ),
+          ]),
+    );
   }
 
   tabViewMarket() {
     return Container(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(8),
-          topRight:   Radius.circular(8),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(35),
+          topRight: Radius.circular(35),
         ),
-        color: backgroudclr,
+        border: Border.all(color: divclr),
+        color: txtfieldclr,
      ),
       height: 90.h,
       width: 98.w,

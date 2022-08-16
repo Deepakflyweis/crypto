@@ -1,5 +1,6 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
+import 'package:crypto_app/view/trade/dialo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -15,22 +16,24 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-         
+      children: [ 
             Row(
             children: [
-              Image.asset("assets/images/arrow.png", width: 10.w,),
+              GestureDetector(
+              onTap: () => ShowDialog.displayArrow(context),
+              child: Image.asset("assets/images/arrow.png", width: 10.w,),),
+              
               Text("RLCUSDT",style: txtStyleWB,),
               w1,
               Text("+14.94%",style: txtStyleBtn,),
               Spacer(), 
                GestureDetector(
-                 onTap: () => _displayCross(),
+                 onTap: () => _displayCross(context),
                 child:Image.asset("assets/images/m2.png", width: 20.w,), 
                 ),
                  w2,
               GestureDetector(
-                 onTap: () => _displayDialog(),
+                 onTap: () => _displayDialog(context),
                 child: Image.asset("assets/images/candle.png", width: 8.w,)), 
                ],
               ),
@@ -53,7 +56,7 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
               padding: EdgeInsets.all(10), 
                 child: Row(
                   children: [
-                   Image.asset("assets/images/tr.png", width: 44.w ), 
+                   Image.asset("assets/images/tr3.png", width: 44.w ), 
                    w2,
                    Image.asset("assets/images/tr1.png", width: 44.w,), 
                    ],
@@ -63,14 +66,26 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
     );
   }
 
-  _displayDialog()  {
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Expanded(
-          child: SimpleDialog( 
-            backgroundColor: divclr,
-            title: Column(
+  _displayDialog(context) {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: txtfieldclr,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(35.0),
+        ),
+        builder: (BuildContext bc) {
+          return Container(  
+            padding: EdgeInsets.only(left: 5),
+             height: MediaQuery.of(context).size.height * 0.35,
+            decoration: const BoxDecoration(
+            color: txtfieldclr,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(35),
+              topLeft:  Radius.circular(35),
+            )
+          ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row( 
                    children: [
@@ -84,20 +99,20 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
                        ],
                     ),
                      Divider(color: whiteclr,),
-              h1,
+                     h1,
               Row( 
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Image.asset(
                                   "assets/images/d1.png",  
                                     height: 5.h,
-                                   width: 30.w, 
+                                   width: 45.w, 
                                   fit: BoxFit.fill,
                            ), 
                           Image.asset(
                                "assets/images/d2.png",
                                  height: 5.h,
-                            width: 30.w, 
+                            width: 45.w, 
                                 fit: BoxFit.fill,
                            )
                         ],
@@ -109,28 +124,40 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
               Text("What is Cross margin and isolated margin?",
               style: txtStyleN,maxLines: 2,overflow: TextOverflow.fade,),
               h2,
-              Image.asset(
-                  "assets/images/d3.png",
-                     height: 6.h,
-                     width: 40.w, 
-                      fit: BoxFit.fill,
-                  )
+              Center(
+                child: Image.asset(
+                    "assets/images/d3.png",
+                       height: 6.h,
+                       width: 75.w, 
+                        fit: BoxFit.fill,
+                    ),
+              )
               ],
-            ), 
-          ),
+            ),  
         );
       },
-    );  
+    );   
   }
-  _displayCross()  {
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          width: 30.w,
-          child: SimpleDialog( 
-          backgroundColor: txtfieldclr,
-            title:  Column(
+
+  _displayCross(context) {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: txtfieldclr,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(35.0),
+        ),
+        builder: (BuildContext bc) {
+          return Container(
+            padding: EdgeInsets.only(left: 8,top: 8),
+             height: MediaQuery.of(context).size.height * 0.2,
+            decoration: const BoxDecoration(
+            color: txtfieldclr,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(35),
+              topLeft:  Radius.circular(35),
+            )
+          ),
+            child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -149,19 +176,19 @@ class _PerpetualScreenState extends State<PerpetualScreen> {
                  child: Image.asset(
                       "assets/images/cancel.png",
                          height: 6.h,
-                         width: 40.w, 
+                         width: 50.w, 
                           fit: BoxFit.fill,
                       ),
                ),
-             )  ,
+             ),
              h1,
               ],
             ),  
-          ),
+        
         );
       },
     );  
  
-  }
+  } 
 
 }

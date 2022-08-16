@@ -31,8 +31,9 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
               width: 95.w,
               height: 4.h,
               fit: BoxFit.fill,
-           ), 
-           h1,
+           ),
+            h1,  
+         
           // Padding(
           //   padding: const EdgeInsets.only(left:8.0,right: 8),
           //   child: Row(
@@ -60,10 +61,10 @@ class _MarketfavScreenState extends State<MarketfavScreen> {
           Image.asset(
               "assets/images/name.png", 
               width: 95.w,
-              height: 3.h,
+              height: 2.5.h,
               fit: BoxFit.fill,
-            ),
-          h1,
+            ), 
+         SizedBox(height: 5,),
           Container(
             width: 100.w,
             child: ListView.builder(

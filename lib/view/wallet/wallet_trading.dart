@@ -56,12 +56,21 @@ class _WalletTradingState extends State<WalletTrading> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: divclr,
-        body: Column(
+    return Container(
+        height: 88.h,
+         width: 96.w,
+        padding: EdgeInsets.only(left: 8,right: 8),
+         decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        ),
+        border: Border.all(color: divclr),
+        color: txtfieldclr,
+     ),
+        child: Column(
           children: [
-            h2,
+            h1,
             Row(
             children: [
               Text("\$52,865.63",style: txtStyleL,),
@@ -75,7 +84,7 @@ class _WalletTradingState extends State<WalletTrading> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text("+100% of all time",style: hintStyle,)),
-              h2,
+              h1,
               Container(
                 padding: EdgeInsets.all(10),
               decoration: const BoxDecoration(
@@ -86,38 +95,100 @@ class _WalletTradingState extends State<WalletTrading> {
                 ),
                 child: Column(
                   children: [
-                   SubscriberChart(data: data),
-                   h1,
-                  //  Row(
-                  //   children: [
-                  //     Text("Wallet",style: txtStyleWB,),
-                  //     Spacer(),
-                  //      Text("Assets",style: txtStyleWB,), 
-                  //   ],
-                  //  ),
-                  //  h2,
-                  //   Row(
-                  //   children: [
-                  //     Text("Trading Wallet",style: hintStyle,),
-                  //     Spacer(),
-                  //      Text("\$52,8562.36",style: txtStyleN,), 
-                  //   ],
-                  //  ),
-                  //   h2,
-                  //   Row(
-                  //   children: [
-                  //     Text("Funding Wallet",style: hintStyle,),
-                  //     Spacer(),
-                  //      Text("\$52,8562.36",style: txtStyleN,), 
-                  //   ],
-                  //  ),
+                    Image.asset("assets/images/w1.png", 
+                    width: double.infinity,), 
+                  //  SubscriberChart(data: data),
+                   h2,
+                  //  walletFund() ,
+      
+                   Container(
+                    width: 95.w,
+                      height: 15.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: divclr,
+                      ),
+                      padding: EdgeInsets.all(15),
+                     child: Column(
+                       children: [
+                         Row(
+                          children: [
+                            Text("Wallet",style: txtStyleWB,),
+                            Spacer(),
+                             Text("Assets",style: txtStyleWB,), 
+                          ],
+                         ),
+                         h1,
+                    Row(
+                    children: [
+                      Text("Trading Wallet",style: hintStyle,),
+                      Spacer(),
+                       Text("\$52,8562.36",style: txtStyleN,), 
+                    ],
+                   ),
+                    h1,
+                    Row(
+                    children: [
+                      Text("Funding Wallet",style: hintStyle,),
+                      Spacer(),
+                       Text("\$52,8562.36",style: txtStyleN,), 
+                    ],
+                   ),
+                       ],
+                     ),
+                   ),
+                   
                   ],
                 ),
               )
           
           ],
-        ),
-      ),
+        ), 
     );
   }
+  walletFund() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Container(
+          width: 45.w,
+          height: 10.h,
+          padding: EdgeInsets.all(15),
+          decoration:   BoxDecoration(
+            color: txtfieldclr,
+            borderRadius: BorderRadius.circular(20),  
+          ),
+          child: Column(
+            children: [
+              Text("Funding wallet",style: hintStyle,),
+              Text(
+                "\$52,8562.36",
+                style: hintStyle,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          width: 45.w,
+          height: 10.h,
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(15),
+          decoration:  BoxDecoration(
+            color: txtfieldclr,
+            borderRadius: BorderRadius.circular(20), 
+          ),
+          child: Column(
+            children: [
+              Text("Trading wallet",style: hintStyle,),
+              Text(
+                "\$52,8562.36",
+                style: hintStyle,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
 }

@@ -2,8 +2,7 @@
  
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/view/home/home_screen.dart';
-import 'package:crypto_app/view/market/market_home.dart';
-import 'package:crypto_app/view/search/search_screen.dart';
+import 'package:crypto_app/view/market/market_home.dart'; 
 import 'package:crypto_app/view/trade/trade_home.dart';
 import 'package:crypto_app/view/traders/trader_home.dart';
 import 'package:crypto_app/view/wallet/wallet_screen.dart';
@@ -41,10 +40,10 @@ class _NavBarIndexState extends State<NavBarIndex> {
 
   List<Widget> navigationPage = [
      HomeScreen(),
-     MarketHomeScreen(),
-     TraderHomeScreen(),
-     TraderHome(),
-     WalletScreen(),
+     const MarketHomeScreen(),
+     const TraderHomeScreen(),
+     const TraderHome(),
+     const WalletScreen(),
   ];
 
   @override

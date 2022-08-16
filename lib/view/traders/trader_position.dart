@@ -13,7 +13,7 @@ class TraderPositionScreen extends StatelessWidget {
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: 8,
-        physics: AlwaysScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.fromLTRB(8.0,8,8,0),

@@ -66,18 +66,8 @@ late TabController _packController;
                   fontWeight: FontWeight.w700,
                 )),
             h1,
-            tabTrader(),
-            Divider(color: whiteclr,),
-            tabViewTrader(),
-            h2,
-            Image.asset("assets/images/TI.png",  
-             width: 95.w,
-             fit: BoxFit.fill,),
-             h1,
-            Image.asset("assets/images/ROI.png",
-            height: 12.h,
-             width: 90.w,fit: BoxFit.fill,),
-             
+            tabTrader(), 
+            tabViewTrader(), 
             h3,
              GestureDetector(
               onTap: () {
@@ -94,30 +84,37 @@ late TabController _packController;
   }
 
   tabTrader() {
-    return TabBar(
-        indicatorSize: TabBarIndicatorSize.label,
-        indicatorWeight: 2.0,
-        indicatorColor: btnclr,
-        unselectedLabelStyle: txtStyleN,
-        labelStyle:txtStyleN,
-        controller: _packController,
-        tabs: const [
-          Tab(
-            child: Text("Overview"),
-          ),
-          Tab(
-            child: Text("Positions"),
-          ),
-          Tab(
-            child: Text("History"),
-          ),
-          
-        ]);
+    return Container(
+      height: 5.h,
+       decoration: BoxDecoration( 
+      border: Border(
+        bottom: BorderSide(
+          color: Colors.grey.shade500, width: 0.6))),
+      child: TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 2.0,
+          indicatorColor: btnclr,
+          unselectedLabelStyle: txtStyleN,
+          labelStyle:txtStyleN,
+          controller: _packController,
+          tabs: const [
+            Tab(
+              child: Text("Overview"),
+            ),
+            Tab(
+              child: Text("Positions"),
+            ),
+            Tab(
+              child: Text("History"),
+            ),
+            
+          ]),
+    );
   }
 
   tabViewTrader() {
     return Container( 
-        height: 45.h,
+        height: 73.h,
         color: divclr,
                child: TabBarView(
                controller: _packController,

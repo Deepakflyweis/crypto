@@ -54,7 +54,7 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
                       Text('Spot', ),
                       Text('Margin', ),
                       Text('Future',  ),
-                      Text('Perpetual',  ),
+                      Text('Perpetual', ),
                     ],
                     indicator: const ContainerTabIndicator(
                       width: 96,
@@ -66,10 +66,10 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
                 ),
              
                  SizedBox(
-                  height: 50.h,
+                  height: 49.h,                   
                   child:  TabBarView(
                     children:  [
-                      SpotScreen(),
+                       SpotScreen(),
                        MarginScreen(),
                        PerpetualScreen(), 
                        PerpetualScreen(), 
@@ -77,6 +77,7 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
                   ),
                 ),  
                   tabMarket(),
+                  // Divider(color: whiteclr,thickness: 0.6),
                   tabViewMarket(),
               ]
           )
@@ -99,8 +100,7 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
       //           Spacer(), 
       //           Image.asset("assets/images/gr.png", width: 10.w,), 
       //             ],
-      //           ),
-                
+      //           ), 
       //           h2,
       //           Container(
       //           padding: EdgeInsets.all(10), 
@@ -145,13 +145,11 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
       //                       );
       //                     },
       //               ),
-      //          )
-          
+      //          )         
       //                  ],
       //                ),
       //               //  Spacer(),
-      //               //  Text("AMT",style: hintStyle,), 
-        
+      //               //  Text("AMT",style: hintStyle,),        
       //                 ],
       //                ),  
       //           ),
@@ -164,24 +162,29 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
   }
 
   tabMarket() {
-    return TabBar(
-        indicatorSize: TabBarIndicatorSize.label,
-        indicatorWeight: 3.0,
-        indicatorColor: btnclr,
-        unselectedLabelStyle: hintStyleS,
-        labelStyle: txtStyleN,
-        controller: _marketController,
-        tabs: const [
-          Tab(
-            child: Text("Positions (0)"),
-          ),
-          Tab(
-            child: Text("My orders (0)"),
-          ),
-          Tab(
-            child: Text("History"),
-          ),
-        ]);
+    return Container(
+      height: 5.h,
+      decoration: BoxDecoration( 
+      border: Border(bottom: BorderSide(color: Colors.grey.shade500, width: 0.8))),
+      child: TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 3.0,
+          indicatorColor: btnclr,
+          unselectedLabelStyle: hintStyleS,
+          labelStyle: txtStyleN,
+          controller: _marketController,
+          tabs: const [
+            Tab(
+              child: Text("Positions (0)"),
+            ),
+            Tab(
+              child: Text("My orders (0)"),
+            ),
+            Tab(
+              child: Text("History"),
+            ),
+          ]),
+    );
   }
   tabViewMarket() {
     return Container(
@@ -190,7 +193,7 @@ class _TraderHomeScreenState extends State<TraderHomeScreen>with SingleTickerPro
           topLeft: Radius.circular(8),
           topRight:   Radius.circular(8),
         ),
-        color: backgroudclr,
+        color: divclr,
      ),
       height: 20.h,
       width: 98.w,

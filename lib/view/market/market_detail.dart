@@ -67,8 +67,9 @@ late TabController _marketController;
               w1,
               CircleAvatar(
                 radius: 2.h,
+                backgroundColor: divclr,
                 backgroundImage: const AssetImage(
-                  "assets/images/market.png",
+                  "assets/images/market1.png",
                 ),
               ),
               w2,
@@ -79,7 +80,8 @@ late TabController _marketController;
                   Text(
                     "ETH/USDT",
                     style: txtStyleWB,
-                  ), 
+                  ),
+                 SizedBox(height: 8.0),
                   Row(
                     children: [
                      const  ImageIcon(
@@ -145,16 +147,46 @@ late TabController _marketController;
                
             ],
           ),
-          h2,
-          TraderOverview(),
           h1,
-          tabMarket(),
+          Container(
+            padding: EdgeInsets.all(15),
+            decoration:  BoxDecoration(
+              color: txtfieldclr,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                topLeft:  Radius.circular(20),
+              ),
+              border: Border.all(color: divclr,width: 2.0)
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text("1d",style: hintStyle,),
+                    Text("1w",style: hintStyle,),
+                    Text("1m",style: hintStyle,),
+                    Text("3m",style: hintStyle,),
+                    Text("6m",style: hintStyle,),
+                    Text("1y",style: hintStyle,),
+                  ],
+                ),
+                h1,
+                Image.asset(
+                  "assets/images/t1.png",width: 100.w,
+                height: 25.h,fit: BoxFit.fill,),
+              ],
+            ),
+          ),
+          // TraderOverview(),
+          h1,
+          tabMarket(), 
           h1,
           Center(
-            child: Image.asset("assets/images/bs.png",width: 50.w,
-            height: 2.5.h,fit: BoxFit.fill,)),
+            child: Image.asset("assets/images/bs.png",width: 30.w,
+            height: 2.h,fit: BoxFit.fill,)),
           
-          h2,
+          h1,
           Image.asset("assets/images/ttpt.png",width: 96.w,),
         h1, 
 
@@ -185,24 +217,38 @@ late TabController _marketController;
     );
   }
    tabMarket() {
-    return TabBar( 
-        indicatorSize: TabBarIndicatorSize.label,
-        indicatorWeight: 3.0,
-        indicatorColor: btnclr,
-        unselectedLabelStyle: hintStyleS,
-        labelStyle: txtStyleN,
-        controller: _marketController,
-        tabs: const [
-          Tab(
-            child: Text("Orderbook"),
-          ),
-          Tab(
-            child: Text("Recent Trades"),
-          ),
-          Tab(
-            child: Text("Token Info"),
-          ),  
-        ]
+    return Container(
+      height: 4.h,
+      child: TabBar(  
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 3.0,
+          indicatorColor: btnclr,  
+          indicatorPadding: EdgeInsets.zero,
+          labelPadding: EdgeInsets.zero,
+          
+          unselectedLabelStyle: const TextStyle(
+              color: Color(0xff898282),
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+            ),
+          labelStyle: const TextStyle(
+                    color: whiteclr,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
+          controller: _marketController,
+          tabs: const [
+            Tab(
+              child: Text("Orderbook"), 
+            ),
+            Tab(
+              child: Text("Recent Trades"), 
+            ),
+            Tab(
+              child: Text("Token Info"), 
+            ),  
+          ]
+      ),
     );
   }
   tabViewMarket() {

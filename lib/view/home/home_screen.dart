@@ -69,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
-
   tabIndex() {
     return Container(
       //  padding: EdgeInsets.all(10),
@@ -198,8 +197,8 @@ class _HomeScreenState extends State<HomeScreen>
             Get.to(() => DepositDetails());
           },
           child: Container(
-            height: 6.h,
-            width: 18.w,
+            height: 5.h,
+            width: 16.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: txtfieldclr,
@@ -216,8 +215,8 @@ class _HomeScreenState extends State<HomeScreen>
             Get.to(() => ReferDetailsScreen());
           },
           child: Container(
-            height: 6.h,
-            width: 18.w,
+            height: 5.h,
+            width: 16.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: txtfieldclr,
@@ -235,8 +234,8 @@ class _HomeScreenState extends State<HomeScreen>
             Get.to(() => FeedScreen());
           },
           child: Container(
-            height: 6.h,
-            width: 18.w,
+            height: 5.h,
+            width: 16.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: txtfieldclr,
@@ -253,8 +252,8 @@ class _HomeScreenState extends State<HomeScreen>
             Get.to(() => DepositDetails());
           },
           child: Container(
-            height: 6.h,
-            width: 18.w,
+            height: 5.h,
+            width: 16.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: txtfieldclr,
@@ -266,13 +265,13 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
         ),
-         InkWell(
+        InkWell(
           onTap: () {
             Get.to(() => DepositDetails());
           },
           child: Container(
-            height: 6.h,
-            width: 18.w,
+            height: 5.h,
+            width: 16.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: txtfieldclr,
@@ -477,6 +476,7 @@ class _HomeScreenState extends State<HomeScreen>
                         bottomRight: Radius.circular(12),
                         bottomLeft: Radius.circular(25),
                         topRight: Radius.circular(25),
+                        topLeft: Radius.circular(20),
                       ),
                       color: txtfieldclr,
                     ),
@@ -493,7 +493,7 @@ class _HomeScreenState extends State<HomeScreen>
                             bottomRight: Radius.circular(10),
                             bottomLeft: Radius.circular(10),
                             topRight: Radius.circular(10),
-                            topLeft: Radius.circular(1),
+                            topLeft: Radius.circular(20),
                           ),
                           color: txtfieldclr,
                           border: Border.all(color: divclr, width: 1.0)),
@@ -501,35 +501,43 @@ class _HomeScreenState extends State<HomeScreen>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CircleAvatar(
-                              radius: 2.h,
-                              backgroundImage: const AssetImage(
-                                "assets/images/proimg.png",
-                              ),
-                              ),
-                              w1,
-                          Column( 
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [  
-                              Text("Crazy007",style: txtStyleWB,),
-                              Text("25% of portfolio",style: hintStyleS,),
-                              const Text("950%(25%)",
-                              style: TextStyle(
-                                color: btnclr,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),), 
-                              
-                              // Text("8.5",style: txtStyleBtn,), 
-                        Image.asset(
-                          "assets/images/line.png",
-                          width: 25.w,
-                          fit: BoxFit.fill,
+                            radius: 2.h,
+                            backgroundImage: const AssetImage(
+                              "assets/images/proimg.png",
+                            ),
                           ),
+                          w1,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Crazy007",
+                                style: txtStyleWB,
+                              ),
+                              Text(
+                                "25% of portfolio",
+                                style: hintStyleS,
+                              ),
+                              const Text(
+                                "950%(25%)",
+                                style: TextStyle(
+                                  color: btnclr,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              Spacer(),
+
+                              // Text("8.5",style: txtStyleBtn,),
+                              Image.asset(
+                                "assets/images/line1.png",
+                                width: 30.w,
+                                fit: BoxFit.fill,
+                              ),
+                              h2
                             ],
                           ),
                           h1,
-                          
-                          
                         ],
                       ),
                     ),
@@ -549,6 +557,7 @@ class _HomeScreenState extends State<HomeScreen>
                         bottomRight: Radius.circular(12),
                         bottomLeft: Radius.circular(25),
                         topRight: Radius.circular(25),
+                        topLeft: Radius.circular(10),
                       ),
                       color: txtfieldclr,
                     ),
@@ -564,65 +573,76 @@ class _HomeScreenState extends State<HomeScreen>
                             bottomRight: Radius.circular(10),
                             bottomLeft: Radius.circular(10),
                             topRight: Radius.circular(10),
-                            topLeft: Radius.circular(1),
+                            topLeft: Radius.circular(10),
                           ),
                           color: txtfieldclr,
                           border: Border.all(color: divclr, width: 1.0)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                         h3,
-                         const Text("GET",style: TextStyle(
-                            color: Colors.yellow,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold
-                          ),
+                          h3,
+                          const Text(
+                            "GET",
+                            style: TextStyle(
+                                color: Colors.yellow,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
                           ),
                           h1,
-                           Align(
-                            alignment: Alignment.center,
-                            child: Text("\$100",style: txtStyleN,)),
-
-                         h1,
-                         const Align(
+                          Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "\$100",
+                                style: txtStyleN,
+                              )),
+                          h1,
+                          const Align(
                             alignment: Alignment.bottomRight,
-                            child: Text("NOW",style: TextStyle(
-                            color: Colors.yellow,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold
+                            child: Text(
+                              "NOW",
+                              style: TextStyle(
+                                  color: Colors.yellow,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                          ),
-                         ),
-                         
-                           
                         ],
                       ),
                     ),
                   )
                 ],
-              ), 
-              
+              ),
+
               h1,
-              Container(
-                height: 9.5.h,
-                width: 47.5.w,
-                padding: EdgeInsets.only(left: 8),
-                decoration: BoxDecoration(
-                    borderRadius:  BorderRadius.circular(10),
+              InkWell(
+                onTap: () => _depositDialog(),
+                child: Container(
+                  height: 9.5.h,
+                  width: 47.5.w,
+                  padding: EdgeInsets.only(left: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
                     color: Color(0xff1B1D29),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      h2, 
-                          Text("Deposit",style: txtStyleN,),
-                          Text("Crypto/P2P",style: hintStyleS,),
+                      h2,
+                      Text(
+                        "Deposit",
+                        style: txtStyleN,
+                      ),
+                      Text(
+                        "Crypto/P2P",
+                        style: hintStyleS,
+                      ),
                     ],
                   ),
+                ),
               )
               // Image.asset(
               //   "assets/images/deph.png",
-                
+
               //   fit: BoxFit.fill,
               // ),
             ],
@@ -630,5 +650,26 @@ class _HomeScreenState extends State<HomeScreen>
         ],
       ),
     );
+  }
+
+  _depositDialog() {
+    return showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (ctx) => AlertDialog(
+      backgroundColor: Colors.transparent,
+      title: Container( 
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+           color: txtfieldclr,
+        ),
+      child: GestureDetector(
+          onTap: () => Get.back(),
+          child: Image.asset("assets/images/dep.png",
+          fit: BoxFit.fill),
+          ),
+      ),
+    
+    ),);
   }
 }

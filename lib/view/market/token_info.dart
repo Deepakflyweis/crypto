@@ -8,7 +8,7 @@ class TokenInfoScrren extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   SafeArea(
+    return SafeArea(
         child: Scaffold(
           backgroundColor: divclr,
           body: Column(
@@ -17,13 +17,15 @@ class TokenInfoScrren extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text("ETH Etherium",style: txtStyleN,)),
+                  h1,
                   Row(
                       children: [
                         Text("Market Cap",style: hintStyleS,),
                         Spacer(),
                          Text("12350001 USD",style: hintStyleS,), 
                       ],
-                     ),h2,
+                     ),
+                     h1,
                      Row(
                       children: [
                         Text("Circulating Supply",style: hintStyleS,),
@@ -31,7 +33,7 @@ class TokenInfoScrren extends StatelessWidget {
                          Text("12350001 USD",style: hintStyleS,), 
                       ],
                      ),
-                      h2,
+                      h1,
                        Row(
                       children: [
                         Text("Total Supply",style: hintStyleS,),
@@ -39,7 +41,7 @@ class TokenInfoScrren extends StatelessWidget {
                          Text("12350001 USD",style: hintStyleS,), 
                       ],
                      ),
-                h2,
+                h1,
                  Row(
                       children: [
                         Text("Max Supply",style: hintStyleS,),
@@ -63,9 +65,11 @@ class TokenInfoScrren extends StatelessWidget {
                          Text("www.eth.com",style: txtStyleBtn,), 
                       ],
                      ),
+                     h1,
                  Align(
                   alignment: Alignment.centerLeft,
                   child: Text("What is ETH ?",style: txtStyleN,)),
+                  h1,
                   Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit sed a, donec neque quam id tortor, faucibus. Mi eget eu dignissim id.",
                   style: hintStyleS,
                   maxLines: 3,

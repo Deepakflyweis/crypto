@@ -2,8 +2,7 @@
 import 'package:crypto_app/utils/appColor/app_colors.dart';
 import 'package:crypto_app/utils/app_style/textStyle.dart';
 import 'package:crypto_app/view/market/market_fav.dart';
-import 'package:crypto_app/widgets/arrow_back.dart';
-import 'package:crypto_app/widgets/myWidget.dart';
+import 'package:crypto_app/widgets/arrow_back.dart'; 
 import 'package:flutter/material.dart'; 
 import 'package:sizer/sizer.dart';
 
@@ -81,28 +80,39 @@ late TabController _marketController;
     );
   }
    tabMarket() {
-    return TabBar(
-        indicatorSize: TabBarIndicatorSize.tab,
-        indicatorWeight: 3.0,
-        indicatorColor: btnclr,
-        unselectedLabelStyle: txtStyleN,
-        labelStyle:hintStyleS,
-        controller: _marketController,
-        tabs: const [
-          Tab(
-            child: Text("Favorites"),
+    return Container(
+      height: 4.h,
+      child: TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 3.0,
+          indicatorColor: btnclr,
+          unselectedLabelStyle: const TextStyle(
+            color: whiteclr,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
           ),
-          Tab(
-            child: Text("Spot"),
+          labelStyle: const TextStyle(
+            color: whiteclr,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
           ),
-          Tab(
-            child: Text("Futures"),
-          ),
-          Tab(
-            child: Text("Zones"),
-          ),
-          
-        ]);
+          controller: _marketController,
+          tabs: const [
+            Tab(
+              child: FittedBox(child: Text("Favorites")),
+            ),
+            Tab(
+              child: Text("Spot"),
+            ),
+            Tab(
+              child: FittedBox(child: Text("Futures")),
+            ),
+            Tab(
+              child: Text("Zones"),
+            ),
+            
+          ]),
+    );
   }
   tabViewMarket() {
     return Container( 
